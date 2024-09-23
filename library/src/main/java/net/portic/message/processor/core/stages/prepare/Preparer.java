@@ -1,6 +1,5 @@
 package net.portic.message.processor.core.stages.prepare;
 
-
-public interface Preparer  {
+public interface Preparer {
     void prepare();
 }

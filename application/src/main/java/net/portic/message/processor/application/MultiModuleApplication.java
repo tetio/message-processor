@@ -1,8 +1,10 @@
 package net.portic.message.processor.application;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,9 +14,13 @@ import net.portic.message.processor.application.stages.prepare.MSG33Preparer;
 import net.portic.message.processor.core.stages.prepare.PreparersFactory;
 
 @Slf4j
+@ComponentScan(basePackages = {
+        "net.portic.message.processor.core.*",  "net.portic.message.processor.application.*"
+})
 @RequiredArgsConstructor
 @SpringBootApplication
-public class MultiModuleApplication {
+public class MultiModuleApplication implements CommandLineRunner {
+
 	@Value("${preparer_for_msg12}")
 	private String preparer4Msg12;
 
@@ -24,7 +30,7 @@ public class MultiModuleApplication {
 		SpringApplication.run(MultiModuleApplication.class, args);
 	}
 
-	// @Override
+	@Override
 	public void run(String... args) {
 		log.info("Hello spring boot");
 		preparerStageFactory.getPreparerStage(MSG01Preparer.BEAN_ID).prepare();

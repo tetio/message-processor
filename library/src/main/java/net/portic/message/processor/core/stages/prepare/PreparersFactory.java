@@ -1,9 +1,10 @@
 package net.portic.message.processor.core.stages.prepare;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
