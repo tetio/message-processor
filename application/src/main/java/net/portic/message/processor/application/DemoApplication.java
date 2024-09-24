@@ -15,19 +15,23 @@ import net.portic.message.processor.core.stages.prepare.PreparersFactory;
 
 @Slf4j
 @ComponentScan(basePackages = {
-        "net.portic.message.processor.core.*",  "net.portic.message.processor.application.*"
+		"net.portic.message.processor.core.*", 
+		"net.portic.message.processor.application.*"
 })
 @RequiredArgsConstructor
 @SpringBootApplication
-public class MultiModuleApplication implements CommandLineRunner {
+public class DemoApplication implements CommandLineRunner {
 
 	@Value("${preparer_for_msg12}")
 	private String preparer4Msg12;
 
+	@Value("${preparer_for_msg15}")
+	private String preparer4Msg15;
+
 	private final PreparersFactory preparerStageFactory;
 
 	public static void main(String[] args) {
-		SpringApplication.run(MultiModuleApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
 
 	@Override
@@ -40,6 +44,7 @@ public class MultiModuleApplication implements CommandLineRunner {
 		// from config file
 		log.info("INI - From config file");
 		preparerStageFactory.getPreparerStage(preparer4Msg12).prepare();
+		preparerStageFactory.getPreparerStage(preparer4Msg15).prepare();
 		log.info("END - From config file");
 
 	}
