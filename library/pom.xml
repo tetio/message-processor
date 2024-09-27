@@ -3,13 +3,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>net.portic.message.processor</groupId>
-		<artifactId>message-processor</artifactId>
-		<version>1.0</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.2</version>
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>net.portic.message.processor</groupId>
 	<artifactId>library</artifactId>
-	<!-- <version>${parent.project.version}</version> -->
+	<version>1.0</version>
 	<name>library</name>
 	<description>Demo Message Processor's library with common classes</description>
 	<dependencies>
@@ -29,13 +30,13 @@
 		</dependency>
 	</dependencies>
 
-	<build>
+	<!-- <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-	</build>
+	</build> -->
 
 </project>

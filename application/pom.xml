@@ -4,13 +4,14 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>net.portic.message.processor</groupId>
-		<artifactId>message-processor</artifactId>
-		<version>1.0</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.2</version>
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>net.portic.message.processor</groupId>
 	<artifactId>application</artifactId>
-	<!-- <version>${parent.project.version}</version> -->
+	<version>1.0</version>
 	<name>application</name>
 	<description>Demo project for Spring Boot</description>
 
